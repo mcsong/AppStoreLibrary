@@ -36,7 +36,7 @@ public class TAppStore extends AppStore {
 
 	@Override
 	public void searchApp(Context ctx, String keyword) {
-		String url = "http://m.tstore.co.kr/mobilepoc/search?query="+ keyword;
+		String url = "http://www.tstore.co.kr/mobilepoc/search?query="+ keyword;
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		ctx.startActivity(intent);
 	}
