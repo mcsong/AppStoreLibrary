@@ -1,0 +1,12 @@
+<resources>
+	<string name="app_name">Demo</string>
+
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+
+	<string name="lbl_check_app_installed">설치 확인</string>
+	<string name="lbl_open_app">앱 열기</string>
+	<string name="lbl_open_publisher_apps">개발사 앱 열기</string>
+	<string name="lbl_search_app">앱 검색</string>
+
+</resources>
