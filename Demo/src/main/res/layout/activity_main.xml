@@ -38,6 +38,7 @@
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_app"
 				android:id="@+id/play_button_02"
+
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
 			<Button

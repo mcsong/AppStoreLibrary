@@ -1,17 +1,22 @@
+/*
 buildscript {
 	repositories {
-		maven {
-			url "https://plugins.gradle.org/m2/"
-		}
+		jcenter()
 	}
+
 	dependencies {
-		classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.1"
+		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+		//classpath 'com.github.dcendents:android-maven-plugin:1.2'
 	}
 }
+*/
 
-import java.text.SimpleDateFormat
+//import java.text.SimpleDateFormat
 
-def globalVersion = new Version(currentVersion)
+//def globalVersion = new Version(currentVersion)
+
+def group = 'net.sjava.appstore'
+def version = '1.0.0'
 
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
@@ -24,7 +29,22 @@ android {
 	compileSdkVersion 21
 	buildToolsVersion "21.1.2"
 
-	resourcePrefix "appstorelibrary__"
+/*
+	sourceSets {
+		main {
+			manifest.srcFile '/src/main/AndroidManifest.xml'
+			java.srcDirs = ['src']
+
+			resources.srcDirs = ['src']
+			aidl.srcDirs = ['src']
+
+			renderscript.srcDirs = ['src']
+
+			res.srcDirs = ['res']
+			assets.srcDirs = ['assets']
+		}
+	}
+*/
 
 	defaultConfig {
 		minSdkVersion 8
@@ -43,27 +63,44 @@ android {
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
 	compile 'com.android.support:appcompat-v7:21.0.3'
-
 }
 
 def siteUrl = 'https://github.com/mcsong/AppStoreLibrary'      // Homepage URL of the library
 def gitUrl = 'https://github.com/mcsong/AppStoreLibrary.git'   // Git repository URL
 
-group = "<maven group id>"                                        // Maven Group ID for the artifact
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
+def bintray_user = properties.getProperty("bintray.user")
+def bintray_api_key = properties.getProperty("bintray.apikey")
+
+bintray {
+	user = bintray_user
+	key = bintray_api_key
+
+	configurations = ['archives'] //When uploading configuration files
+	pkg {
+		repo = 'maven'
+		name = 'AppStoreLibrary'
+		desc = 'This is a library with some AppStore features'
+		websiteUrl = siteUrl
+		issueTrackerUrl = 'https://github.com/mcsong/AppStoreLibrary/issues'
+		vcsUrl = gitUrl
+		licenses = ['Apache-2.0']
+		labels = ['aar', 'android', 'appstore']
+		publicDownloadNumbers = true
+	}
+}
+
+group ='net.sjava.appstore'
 
 install {
 	repositories.mavenInstaller {
-		// This generates POM.xml with proper parameters
 		pom {
 			project {
 				packaging 'aar'
-
-				// Add your description here
-				name '<Your library description>'
+				name 'AppStoreLibrary'
 				url siteUrl
-
-				// Set your license
 				licenses {
 					license {
 						name 'The Apache Software License, Version 2.0'
@@ -72,24 +109,21 @@ install {
 				}
 				developers {
 					developer {
-						id '<your user ID>'
-						name '<your name>'
-						email '<your email>'
+						id 'mcsong'
+						name 'Justin(Moo Chan) Song'
+						email 'mcsong@gmail.com'
 					}
 				}
 				scm {
 					connection gitUrl
 					developerConnection gitUrl
 					url siteUrl
-
 				}
 			}
 		}
 	}
 }
 
-dependencies {
-}
 
 task sourcesJar(type: Jar) {
 	from android.sourceSets.main.java.srcDirs
@@ -97,6 +131,7 @@ task sourcesJar(type: Jar) {
 }
 
 task javadoc(type: Javadoc) {
+	options.charSet = 'UTF-8'
 	source = android.sourceSets.main.java.srcDirs
 	classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
@@ -111,6 +146,8 @@ artifacts {
 	archives sourcesJar
 }
 
+
+/*
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 
@@ -158,4 +195,4 @@ class Version {
 		thisVersion
 	}
 }
-
+*/
