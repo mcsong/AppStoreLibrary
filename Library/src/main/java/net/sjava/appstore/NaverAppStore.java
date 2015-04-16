@@ -5,19 +5,19 @@ import android.content.Intent;
 import android.net.Uri;
 
 /**
- * 네이버 스토어 클래스
- * 
+ * Naver Store class
+ *
  * @author mcsong@gmail.com
  * @date Dec 10, 2014 2:04:08 PM
  * @version 1.0.0
  */
 public class NaverAppStore extends AppStore {
 	static String APP_URL ="http://nstore.naver.com/appstore/web/detail.nhn?productNo=";
-	
+
 	public static NaverAppStore newInstance() {
 		return new NaverAppStore();
 	}
-	
+
 	@Override
 	public boolean isInstalled(Context ctx) {
 		return isAppInstalled(ctx, PACKAGE_NAME_NSTORE);

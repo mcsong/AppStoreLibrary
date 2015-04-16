@@ -3,7 +3,7 @@ package net.sjava.appstore;
 import android.content.Context;
 
 /**
- * 스토어에 배포한 개발사의 앱 목록을 보여주는 인터페이스
+ * Interface to display publisher's apps
  *
  * @author mcsong@gmail.com
  * @date Dec 10, 2014 2:04:13 PM
@@ -11,7 +11,7 @@ import android.content.Context;
  */
 public interface PublisherAppOpenable {
 	/**
-	 * 앱스토어에 배포한 개발사의 앱을 연다.
+	 *	Open publisher's apps
 	 *
 	 * @param ctx
 	 * @param key

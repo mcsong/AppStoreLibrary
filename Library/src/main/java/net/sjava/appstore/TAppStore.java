@@ -5,29 +5,30 @@ import android.content.Intent;
 import android.net.Uri;
 
 /**
- * 
+ * T Store class
+ *
  * @author mcsong@gmail.com
  * @date Dec 10, 2014 2:04:18 PM
  * @version 1.0.0
  */
 public class TAppStore extends AppStore {
 	private static String APP_URL = "http://m.tstore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=";
-	
+
 	public static TAppStore newInstance() {
 		return new TAppStore();
 	}
-	
+
 	@Override
 	public boolean isInstalled(Context ctx) {
 		return isAppInstalled(ctx, PACKAGE_NAME_TSTORE);
 	}
-    
+
 	@Override
-	public void openApp(Context ctx, String uniqueId) {		
+	public void openApp(Context ctx, String uniqueId) {
 		if(isInstalled(ctx)) {
 			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tstore://PRODUCT_VIEW/" + uniqueId + "/0"));
 			ctx.startActivity(intent);
-			return;			
+			return;
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_URL + uniqueId));
@@ -42,5 +43,5 @@ public class TAppStore extends AppStore {
 	}
 
 	//
-		
+
 }

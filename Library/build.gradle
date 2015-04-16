@@ -1,57 +1,18 @@
-/*
-buildscript {
-	repositories {
-		jcenter()
-	}
-
-	dependencies {
-		classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
-		//classpath 'com.github.dcendents:android-maven-plugin:1.2'
-	}
-}
-*/
-
-//import java.text.SimpleDateFormat
-
-//def globalVersion = new Version(currentVersion)
-
-def group = 'net.sjava.appstore'
-def version = '1.0.0'
-
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
-// This is the library version used when deploying the artifact
-version = "1.0.0"
 
 android {
-	compileSdkVersion 21
-	buildToolsVersion "21.1.2"
+	compileSdkVersion 22
+	buildToolsVersion "22.0.1"
 
-/*
-	sourceSets {
-		main {
-			manifest.srcFile '/src/main/AndroidManifest.xml'
-			java.srcDirs = ['src']
-
-			resources.srcDirs = ['src']
-			aidl.srcDirs = ['src']
-
-			renderscript.srcDirs = ['src']
-
-			res.srcDirs = ['res']
-			assets.srcDirs = ['assets']
-		}
-	}
-*/
 
 	defaultConfig {
 		minSdkVersion 8
-		targetSdkVersion 21
+		targetSdkVersion 22
 		versionCode 1
-		versionName "1.0"
+		versionName "1.0.0"
 	}
+
 	buildTypes {
 		release {
 			minifyEnabled false
@@ -62,137 +23,7 @@ android {
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile 'com.android.support:appcompat-v7:21.0.3'
+	compile 'com.android.support:appcompat-v7:22.0.0'
 }
 
-def siteUrl = 'https://github.com/mcsong/AppStoreLibrary'      // Homepage URL of the library
-def gitUrl = 'https://github.com/mcsong/AppStoreLibrary.git'   // Git repository URL
-
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-def bintray_user = properties.getProperty("bintray.user")
-def bintray_api_key = properties.getProperty("bintray.apikey")
-
-bintray {
-	user = bintray_user
-	key = bintray_api_key
-
-	configurations = ['archives'] //When uploading configuration files
-	pkg {
-		repo = 'maven'
-		name = 'AppStoreLibrary'
-		desc = 'This is a library with some AppStore features'
-		websiteUrl = siteUrl
-		issueTrackerUrl = 'https://github.com/mcsong/AppStoreLibrary/issues'
-		vcsUrl = gitUrl
-		licenses = ['Apache-2.0']
-		labels = ['aar', 'android', 'appstore']
-		publicDownloadNumbers = true
-	}
-}
-
-group ='net.sjava.appstore'
-
-install {
-	repositories.mavenInstaller {
-		pom {
-			project {
-				packaging 'aar'
-				name 'AppStoreLibrary'
-				url siteUrl
-				licenses {
-					license {
-						name 'The Apache Software License, Version 2.0'
-						url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-					}
-				}
-				developers {
-					developer {
-						id 'mcsong'
-						name 'Justin(Moo Chan) Song'
-						email 'mcsong@gmail.com'
-					}
-				}
-				scm {
-					connection gitUrl
-					developerConnection gitUrl
-					url siteUrl
-				}
-			}
-		}
-	}
-}
-
-
-task sourcesJar(type: Jar) {
-	from android.sourceSets.main.java.srcDirs
-	classifier = 'sources'
-}
-
-task javadoc(type: Javadoc) {
-	options.charSet = 'UTF-8'
-	source = android.sourceSets.main.java.srcDirs
-	classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-task javadocJar(type: Jar, dependsOn: javadoc) {
-	classifier = 'javadoc'
-	from javadoc.destinationDir
-}
-
-artifacts {
-	archives javadocJar
-	archives sourcesJar
-}
-
-
-/*
-Properties properties = new Properties()
-properties.load(project.rootProject.file('local.properties').newDataInputStream())
-
-bintray {
-	user = properties.getProperty("bintray.user")
-	key = properties.getProperty("bintray.apikey")
-
-	configurations = ['archives']
-	pkg {
-		repo = "maven"
-		name = "net.sjava.appstore"
-		websiteUrl = siteUrl
-		vcsUrl = gitUrl
-		licenses = ["Apache-2.0"]
-		publish = true
-	}
-}
-
-class Version {
-	String originalVersion
-	String thisVersion
-	String status
-	Date buildTime
-
-	Version(String versionValue) {
-		buildTime = new Date()
-		originalVersion = versionValue
-		if (originalVersion.endsWith('-SNAPSHOT')) {
-			status = 'integration'
-			thisVersion = originalVersion.substring(0, originalVersion.length() - 'SNAPSHOT'.length()) + getTimestamp()
-		} else {
-			status = 'release'
-			thisVersion = versionValue
-		}
-	}
-
-	String getTimestamp() {
-		// Convert local file timestamp to UTC
-		def format = new SimpleDateFormat('yyyyMMddHHmmss')
-		format.setCalendar(Calendar.getInstance(TimeZone.getTimeZone('UTC')));
-		return format.format(buildTime)
-	}
-
-	String toString() {
-		thisVersion
-	}
-}
-*/
+apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
