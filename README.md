@@ -1,10 +1,17 @@
 # AppStoreLibrary
-안드로이드 앱스토어 앱에서 제공하는 기능을 래핑한 라이브러리이다. 
+This is a library for Android AppStore features.
 
-# Gradle:
+# Gradle & Maven
 dependencies {
-  // 조만간 추가 예정 
+    compile 'net.sjava.appstore:library:1.0.1@aar'
 }
+
+<dependency>
+	<groupId>net.sjava.appstore</groupId>
+	<artifactId>library</artifactId>
+	<version>1.0.1</version>
+</dependency>
+
 
 # Licence:
 
