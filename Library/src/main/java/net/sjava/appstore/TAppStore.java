@@ -12,7 +12,7 @@ import android.net.Uri;
  * @version 1.0.0
  */
 public class TAppStore extends AppStore {
-	private static String APP_URL = "http://m.tstore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=";
+	private static final String APP_URL = "http://m.tstore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=";
 
 	public static TAppStore newInstance() {
 		return new TAppStore();

@@ -12,8 +12,8 @@ import android.net.Uri;
  * @version 1.0.0
  */
 public class AmazonAppStore extends AppStore implements PublisherAppOpenable {
-	static String APPSTORE_URI = "amzn://apps/android?";
-	static String APP_URL = "http://www.amazon.com/gp/mas/dl/android?";
+	private static final String APPSTORE_URI = "amzn://apps/android?";
+	private static final String APP_URL = "http://www.amazon.com/gp/mas/dl/android?";
 
 	public static AmazonAppStore newInstance() {
 		return new AmazonAppStore();

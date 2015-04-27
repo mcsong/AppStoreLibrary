@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 
-import java.util.Iterator;
 import java.util.List;
 /**
  * AppStore abstract class
@@ -30,9 +29,12 @@ public abstract class AppStore {
 	}
 
 	protected boolean isAppInstalled(Context ctx, String packageName) {
-		Iterator<ApplicationInfo> itr = getApplications(ctx).iterator();
-		while (itr.hasNext()) {
-			if (itr.next().packageName.indexOf(packageName) != -1)
+		List<ApplicationInfo> apps = getApplications(ctx);
+		if(apps == null || apps.size() == 0)
+			return false;
+
+		for(ApplicationInfo appinfo : apps) {
+			if(appinfo.packageName.contains(packageName))
 				return true;
 		}
 

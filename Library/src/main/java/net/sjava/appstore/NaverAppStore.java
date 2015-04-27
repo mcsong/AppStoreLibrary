@@ -12,7 +12,7 @@ import android.net.Uri;
  * @version 1.0.0
  */
 public class NaverAppStore extends AppStore {
-	static String APP_URL ="http://nstore.naver.com/appstore/web/detail.nhn?productNo=";
+	private static final String APP_URL ="http://nstore.naver.com/appstore/web/detail.nhn?productNo=";
 
 	public static NaverAppStore newInstance() {
 		return new NaverAppStore();
