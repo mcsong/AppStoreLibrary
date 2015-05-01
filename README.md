@@ -1,11 +1,17 @@
 ## AppStore Library
-
 This library make easy to use AppStore app' features.
 
-   - Play AppStore
-   - Amazon AppStore
-   - T Store
-   - Naver AppStore
+### Features
+- Check store app is installed.
+- Open app within store app.
+- Search apps by publisher within store app.
+- Search apps within store app.
+
+### AppStore
+- Play AppStore
+- Amazon AppStore
+- T Store
+- Naver AppStore
 
 ## Gradle & Maven
 Gradle
