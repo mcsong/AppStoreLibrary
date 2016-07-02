@@ -1,16 +1,36 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
+publish {
+	userOrg = 'mcsong'
+	groupId = 'net.sjava'
+	artifactId = 'appstore'
+	publishVersion = '1.0.2'
+	desc = 'Android AppStore Library'
+	website = 'https://github.com/mcsong/AppStoreLibrary'
+	issueTracker = "${website}/issues"
+	repository = "${website}.git"
+}
+
+buildscript {
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath 'com.novoda:bintray-release:0.3.4'
+	}
+}
 
 android {
-	compileSdkVersion 22
-	buildToolsVersion "22.0.1"
+	compileSdkVersion 23
+	buildToolsVersion "23.0.3"
 
 
 	defaultConfig {
 		minSdkVersion 8
-		targetSdkVersion 22
+		targetSdkVersion 23
 		versionCode 1
-		versionName "1.0.0"
+		versionName "1.0.2"
 	}
 
 	buildTypes {
@@ -19,9 +39,13 @@ android {
 			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 	}
+
+	lintOptions {
+		abortOnError false
+	}
 }
 
 dependencies {
 	compile fileTree(dir: 'libs', include: ['*.jar'])
-	compile 'com.android.support:appcompat-v7:22.0.0'
+	compile 'com.android.support:appcompat-v7:23.4.0'
 }

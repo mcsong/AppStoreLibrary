@@ -17,16 +17,16 @@ This library make easy to use AppStore app' features.
 Gradle
 ```groovy
     dependencies {
-    	compile 'net.sjava.appstore:library:1.0.1@aar'
+    	compile 'net.sjava:appstore:1.0.2'
     }
 ```
 
 Maven
 ```xml
     <dependency>
-     <groupId>net.sjava.appstore</groupId>
-     <artifactId>library</artifactId>
-     <version>1.0.1</version>
+     <groupId>net.sjava</groupId>
+     <artifactId>appstore</artifactId>
+     <version>1.0.2</version>
     </dependency>
 ```
 ## Usage
