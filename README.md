@@ -1,5 +1,9 @@
 ## AppStore Library
-This library make easy to use AppStore app' features.
+[![Release](https://img.shields.io/badge/jcenter-1.0.2-blue.svg)](https://bintray.com/mcsong/maven/appstore)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AppStore Library-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1772)
+
+## Overview
+This library make easy to use AppStore app's features.
+
 
 ### Features
 - Check store app is installed.
