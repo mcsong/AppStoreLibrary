@@ -11,12 +11,12 @@ import android.net.Uri;
  * @date Dec 10, 2014 2:04:02 PM
  * @version 1.0.0
  */
-public class AmazonAppStore extends AppStore implements PublisherAppOpenable {
+public class AmazonStoreApp extends AppStore implements PublisherAppOpenable {
 	private static final String APPSTORE_URI = "amzn://apps/android?";
 	private static final String APP_URL = "http://www.amazon.com/gp/mas/dl/android?";
 
-	public static AmazonAppStore newInstance() {
-		return new AmazonAppStore();
+	public static AmazonStoreApp newInstance() {
+		return new AmazonStoreApp();
 	}
 
 	@Override

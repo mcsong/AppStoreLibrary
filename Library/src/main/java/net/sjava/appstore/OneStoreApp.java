@@ -11,11 +11,11 @@ import android.net.Uri;
  * @date Dec 10, 2014 2:04:18 PM
  * @version 1.0.0
  */
-public class TAppStore extends AppStore {
+public class OneStoreApp extends AppStore {
 	private static final String APP_URL = "http://m.tstore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=";
 
-	public static TAppStore newInstance() {
-		return new TAppStore();
+	public static OneStoreApp newInstance() {
+		return new OneStoreApp();
 	}
 
 	@Override
@@ -41,7 +41,5 @@ public class TAppStore extends AppStore {
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		ctx.startActivity(intent);
 	}
-
-	//
 
 }
