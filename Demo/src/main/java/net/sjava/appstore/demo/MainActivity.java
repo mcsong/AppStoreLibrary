@@ -7,12 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import net.sjava.appstore.AmazonAppStore;
+import net.sjava.appstore.AmazonStoreApp;
 import net.sjava.appstore.AppStore;
 import net.sjava.appstore.NaverAppStore;
+import net.sjava.appstore.OneStoreApp;
 import net.sjava.appstore.PlayAppStore;
 import net.sjava.appstore.PublisherAppOpenable;
-import net.sjava.appstore.TAppStore;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -83,7 +83,7 @@ public class MainActivity extends ActionBarActivity {
 		btn01.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				appStore = AmazonAppStore.newInstance();
+				appStore = AmazonStoreApp.newInstance();
 				Toast.makeText(ctx, "설치 여부 : " + appStore.isInstalled(ctx), Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -91,7 +91,7 @@ public class MainActivity extends ActionBarActivity {
 		btn02.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				appStore = AmazonAppStore.newInstance();
+				appStore = AmazonStoreApp.newInstance();
 				appStore.openApp(ctx, "com.amazon.mp3");
 			}
 		});
@@ -99,7 +99,7 @@ public class MainActivity extends ActionBarActivity {
 		btn03.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				publisherAppOpener = AmazonAppStore.newInstance();
+				publisherAppOpener = AmazonStoreApp.newInstance();
 				publisherAppOpener.openPublisherApps(ctx, "com.amazon.mp3");
 			}
 		});
@@ -107,7 +107,7 @@ public class MainActivity extends ActionBarActivity {
 		btn04.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				appStore = AmazonAppStore.newInstance();
+				appStore = AmazonStoreApp.newInstance();
 				appStore.searchApp(ctx, "mp3");
 			}
 		});
@@ -122,7 +122,7 @@ public class MainActivity extends ActionBarActivity {
 		btn01.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				appStore = TAppStore.newInstance();
+				appStore = OneStoreApp.newInstance();
 				Toast.makeText(ctx, "설치 여부 : " + appStore.isInstalled(ctx), Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -131,7 +131,7 @@ public class MainActivity extends ActionBarActivity {
 		btn02.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				appStore = TAppStore.newInstance();
+				appStore = OneStoreApp.newInstance();
 				appStore.openApp(ctx, "0000163382");
 			}
 		});
@@ -151,7 +151,7 @@ public class MainActivity extends ActionBarActivity {
 		btn04.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				appStore = TAppStore.newInstance();
+				appStore = OneStoreApp.newInstance();
 				appStore.searchApp(ctx, "T map");
 			}
 		}); */
