@@ -1,5 +1,6 @@
 package net.sjava.appstore;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -26,9 +27,12 @@ public class OneStoreApp extends AppStore {
 	@Override
 	public void openApp(Context ctx, String uniqueId) {
 		if(isInstalled(ctx)) {
-			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tstore://PRODUCT_VIEW/" + uniqueId + "/0"));
-			ctx.startActivity(intent);
-			return;
+			try {
+				intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tstore://PRODUCT_VIEW/" + uniqueId + "/0"));
+				ctx.startActivity(intent);
+				return;
+			} catch (ActivityNotFoundException e) { // ignore
+			}
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_URL + uniqueId));

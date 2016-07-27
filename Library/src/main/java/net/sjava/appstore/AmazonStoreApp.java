@@ -1,5 +1,6 @@
 package net.sjava.appstore;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -27,9 +28,12 @@ public class AmazonStoreApp extends AppStore implements PublisherAppOpenable {
 	@Override
 	public void openApp(Context ctx, String uniqueId) {
 		if(isInstalled(ctx)) {
-			intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APPSTORE_URI +"p=" + uniqueId));
-			ctx.startActivity(intent);
-			return;
+			try {
+				intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APPSTORE_URI + "p=" + uniqueId));
+				ctx.startActivity(intent);
+				return;
+			} catch (ActivityNotFoundException e) { // ignore
+			}
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_URL + "p=" + uniqueId));
@@ -39,9 +43,12 @@ public class AmazonStoreApp extends AppStore implements PublisherAppOpenable {
 	@Override
 	public void searchApp(Context ctx, String keyword) {
 		if(isInstalled(ctx)) {
-			intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APPSTORE_URI +"s=" + keyword));
-			ctx.startActivity(intent);
-			return;
+			try {
+				intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APPSTORE_URI +"s=" + keyword));
+				ctx.startActivity(intent);
+				return;
+			} catch (ActivityNotFoundException e) { // ignore
+			}
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_URL + "s="+ keyword));
@@ -51,9 +58,12 @@ public class AmazonStoreApp extends AppStore implements PublisherAppOpenable {
 	@Override
 	public void openPublisherApps(Context ctx, String key) {
 		if(isInstalled(ctx)) {
-			intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APPSTORE_URI + "p=" + key +"&showAll=1"));
-			ctx.startActivity(intent);
-			return;
+			try {
+				intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APPSTORE_URI + "p=" + key +"&showAll=1"));
+				ctx.startActivity(intent);
+				return;
+			} catch (ActivityNotFoundException e) { // ignore
+			}
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_URL + "p=" + key +"&showAll=1"));

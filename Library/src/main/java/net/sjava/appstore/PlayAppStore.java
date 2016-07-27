@@ -1,5 +1,6 @@
 package net.sjava.appstore;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -28,9 +29,12 @@ public class PlayAppStore extends AppStore implements PublisherAppOpenable {
 	@Override
 	public void openApp(Context ctx, String uniqueId) {
 		if(isInstalled(ctx)) {
-			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + uniqueId));
-			ctx.startActivity(intent);
-			return;
+			try {
+				intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + uniqueId));
+				ctx.startActivity(intent);
+				return;
+			} catch (ActivityNotFoundException e) { // ignore
+			}
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_URL + uniqueId));
@@ -40,9 +44,12 @@ public class PlayAppStore extends AppStore implements PublisherAppOpenable {
 	@Override
 	public void searchApp(Context ctx, String keyword) {
 		if(isInstalled(ctx)) {
-			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q="+ keyword));
-			ctx.startActivity(intent);
-			return;
+			try {
+				intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=" + keyword));
+				ctx.startActivity(intent);
+				return;
+			} catch (ActivityNotFoundException e) { // ignore
+			}
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_SEARCH_URL + keyword));
@@ -52,9 +59,12 @@ public class PlayAppStore extends AppStore implements PublisherAppOpenable {
 	@Override
 	public void openPublisherApps(Context ctx, String key) {
 		if(isInstalled(ctx)) {
-			intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:"+ key));
-			ctx.startActivity(intent);
-			return;
+			try {
+				intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:" + key));
+				ctx.startActivity(intent);
+				return;
+			} catch (ActivityNotFoundException e) { // ignore
+			}
 		}
 
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_SEARCH_URL + "pub:" + key));
