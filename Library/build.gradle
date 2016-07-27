@@ -5,7 +5,7 @@ publish {
 	userOrg = 'mcsong'
 	groupId = 'net.sjava'
 	artifactId = 'appstore'
-	publishVersion = '1.0.2'
+	publishVersion = '1.0.3'
 	desc = 'Android AppStore Library'
 	website = 'https://github.com/mcsong/AppStoreLibrary'
 	issueTracker = "${website}/issues"
@@ -30,7 +30,7 @@ android {
 		minSdkVersion 8
 		targetSdkVersion 24
 		versionCode 1
-		versionName "1.0.2"
+		versionName "1.0.3"
 	}
 
 	buildTypes {
