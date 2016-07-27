@@ -21,7 +21,7 @@ This library make easy to use AppStore app's features.
 Gradle
 ```groovy
     dependencies {
-    	compile 'net.sjava:appstore:1.0.2'
+    	compile 'net.sjava:appstore:1.0.3'
     }
 ```
 
