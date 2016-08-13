@@ -22,8 +22,8 @@ buildscript {
 }
 
 android {
-	compileSdkVersion 23
-	buildToolsVersion "24.0.0"
+	compileSdkVersion 24
+	buildToolsVersion "24.0.1"
 
 
 	defaultConfig {
@@ -36,7 +36,7 @@ android {
 	buildTypes {
 		release {
 			minifyEnabled false
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+			//proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 		}
 	}
 
