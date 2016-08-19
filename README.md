@@ -21,7 +21,7 @@ This library make easy to use AppStore app's features.
 Gradle
 ```groovy
     dependencies {
-    	compile 'net.sjava:appstore:1.0.3'
+    	compile 'net.sjava:appstore:1.0.5'
     }
 ```
 
@@ -30,7 +30,7 @@ Maven
     <dependency>
      <groupId>net.sjava</groupId>
      <artifactId>appstore</artifactId>
-     <version>1.0.3</version>
+     <version>1.0.5</version>
     </dependency>
 ```
 ## Usage
