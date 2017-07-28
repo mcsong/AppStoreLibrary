@@ -25,36 +25,69 @@
 		<LinearLayout
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:weightSum="10.0">
+
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_check_app_installed"
 				android:id="@+id/play_button_01"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_app"
+				android:layout_weight="2.5"
 				android:id="@+id/play_button_02"
-
+				android:ellipsize="middle"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_publisher_apps"
+				android:layout_weight="2.5"
 				android:id="@+id/play_button_03"
+				android:ellipsize="middle"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_search_app"
+				android:layout_weight="2.5"
 				android:id="@+id/play_button_04"
+				android:ellipsize="middle"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
+		</LinearLayout>
+
+		<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:weightSum="10.0">
+			<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/lbl_developer_page"
+				android:id="@+id/play_button_05"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
+				style="@style/Base.TextAppearance.AppCompat.Small"/>
+
+			<Button
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/lbl_open_collection"
+				android:layout_weight="2.5"
+				android:id="@+id/play_button_06"
+				android:ellipsize="middle"
+				style="@style/Base.TextAppearance.AppCompat.Small"/>
 		</LinearLayout>
 
 		<TextView
@@ -67,11 +100,14 @@
 		<LinearLayout
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:weightSum="10.0">
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_check_app_installed"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/amazon_button_01"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -79,6 +115,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_app"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/amazon_button_02"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -86,6 +124,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_publisher_apps"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/amazon_button_03"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -93,6 +133,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_search_app"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/amazon_button_04"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -102,16 +144,18 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_margin="4dp"
-			android:text="TStore"
-			/>
+			android:text="TStore" />
 		<LinearLayout
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:weightSum="10.0">
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_check_app_installed"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/tstore_button_01"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -119,6 +163,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_app"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/tstore_button_02"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -126,6 +172,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_publisher_apps"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/tstore_button_03"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -133,6 +181,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_search_app"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/tstore_button_04"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -147,11 +197,14 @@
 		<LinearLayout
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content"
+			android:weightSum="10.0">
 			<Button
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_check_app_installed"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/naver_button_01"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -159,6 +212,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_app"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/naver_button_02"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -166,6 +221,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_open_publisher_apps"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/naver_button_03"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 
@@ -173,6 +230,8 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/lbl_search_app"
+				android:layout_weight="2.5"
+				android:ellipsize="middle"
 				android:id="@+id/naver_button_04"
 				style="@style/Base.TextAppearance.AppCompat.Small"/>
 

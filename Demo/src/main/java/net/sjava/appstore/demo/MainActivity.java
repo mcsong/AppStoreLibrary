@@ -41,6 +41,9 @@ public class MainActivity extends ActionBarActivity {
 		Button btn03 = (Button)findViewById(R.id.play_button_03);
 		Button btn04 = (Button)findViewById(R.id.play_button_04);
 
+		Button btn05 = (Button)findViewById(R.id.play_button_05);
+		Button btn06 = (Button)findViewById(R.id.play_button_06);
+
 		btn01.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -72,6 +75,37 @@ public class MainActivity extends ActionBarActivity {
 				appStore.searchApp(ctx, "gmail");
 			}
 		});
+
+		btn05.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				appStore = PlayAppStore.newInstance();
+				((PlayAppStore)appStore).openDeveloperPage(ctx, "developerId");
+
+			}
+		});
+
+		btn06.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				appStore = PlayAppStore.newInstance();
+				//Staff Picks (Featured)
+				/*
+				Collection	collection_name
+				Staff Picks (Featured)	featured
+				Top Paid	topselling_paid
+				Top Free	topselling_free
+				Top New Free	topselling_new_free
+				Top New Paid	topselling_new_paid
+				Top Grossing	topgrossing
+				Trending	movers_shakers
+				*/
+				//((PlayAppStore)appStore).openCollectionApps(ctx, "featured");
+				((PlayAppStore)appStore).openCollectionApps(ctx, "topgrossing");
+
+			}
+		});
+
 	}
 
 	private void initAmazonAppStore() {

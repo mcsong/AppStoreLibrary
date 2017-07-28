@@ -15,6 +15,8 @@ import android.net.Uri;
 public class PlayAppStore extends AppStore implements PublisherAppOpenable {
 	private static final String APP_URL = "http://play.google.com/store/apps/deails?id=";
 	private static final String APP_SEARCH_URL = "http://play.google.com/store/search?q=";
+	private static final String APP_DEVELOPER_PAGE = "http://play.google.com/store/dev?id=";
+	private static final String APP_COLLECTION_URL = "http://play.google.com/store/apps/collection/";
 
 	public static PlayAppStore newInstance() {
 		return new PlayAppStore();
@@ -70,5 +72,35 @@ public class PlayAppStore extends AppStore implements PublisherAppOpenable {
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_SEARCH_URL + "pub:" + key));
 		ctx.startActivity(intent);
 	}
+
+	public void openDeveloperPage(Context ctx, String developerId) {
+        if(isInstalled(ctx)) {
+            try {
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://dev?id=" + developerId));
+                ctx.startActivity(intent);
+                return;
+            } catch (ActivityNotFoundException e) {
+                // ignore
+            }
+        }
+
+        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_DEVELOPER_PAGE + developerId));
+        ctx.startActivity(intent);
+    }
+
+    public void openCollectionApps(Context ctx, String collectonName) {
+        if(isInstalled(ctx)) {
+            try {
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://apps/collection/" + collectonName));
+                ctx.startActivity(intent);
+                return;
+            } catch (ActivityNotFoundException e) {
+                // ignore
+            }
+        }
+
+        intent = new Intent(Intent.ACTION_VIEW, Uri.parse(APP_COLLECTION_URL + collectonName));
+        ctx.startActivity(intent);
+    }
 
 }
