@@ -19,13 +19,12 @@ This library make easy to use AppStore app's features.
 - Play AppStore
 - Amazon AppStore
 - T Store
-- Naver AppStore
 
 ## Gradle & Maven
 Gradle
 ```groovy
     dependencies {
-    	implementation 'net.sjava:appstore:1.0.7'
+    	implementation 'net.sjava:appstore:1.0.8'
     }
 ```
 
@@ -34,7 +33,7 @@ Maven
     <dependency>
      <groupId>net.sjava</groupId>
      <artifactId>appstore</artifactId>
-     <version>1.0.5</version>
+     <version>1.0.8</version>
     </dependency>
 ```
 ## Usage

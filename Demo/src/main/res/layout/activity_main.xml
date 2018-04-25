@@ -144,7 +144,7 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_margin="4dp"
-			android:text="TStore" />
+			android:text="OneStore" />
 		<LinearLayout
 			android:orientation="horizontal"
 			android:layout_width="match_parent"
@@ -188,54 +188,6 @@
 
 		</LinearLayout>
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_margin="4dp"
-			android:text="Naver"
-			/>
-		<LinearLayout
-			android:orientation="horizontal"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:weightSum="10.0">
-			<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/lbl_check_app_installed"
-				android:layout_weight="2.5"
-				android:ellipsize="middle"
-				android:id="@+id/naver_button_01"
-				style="@style/Base.TextAppearance.AppCompat.Small"/>
-
-			<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/lbl_open_app"
-				android:layout_weight="2.5"
-				android:ellipsize="middle"
-				android:id="@+id/naver_button_02"
-				style="@style/Base.TextAppearance.AppCompat.Small"/>
-
-			<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/lbl_open_publisher_apps"
-				android:layout_weight="2.5"
-				android:ellipsize="middle"
-				android:id="@+id/naver_button_03"
-				style="@style/Base.TextAppearance.AppCompat.Small"/>
-
-			<Button
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/lbl_search_app"
-				android:layout_weight="2.5"
-				android:ellipsize="middle"
-				android:id="@+id/naver_button_04"
-				style="@style/Base.TextAppearance.AppCompat.Small"/>
-
-		</LinearLayout>
 
 	</LinearLayout>
 </RelativeLayout>

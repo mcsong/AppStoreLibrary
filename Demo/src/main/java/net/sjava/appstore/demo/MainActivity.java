@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import net.sjava.appstore.AmazonStoreApp;
 import net.sjava.appstore.AppStore;
-import net.sjava.appstore.NaverAppStore;
 import net.sjava.appstore.OneStoreApp;
 import net.sjava.appstore.PlayAppStore;
 import net.sjava.appstore.PublisherAppOpenable;
@@ -26,9 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
 		initPlayAppStore();
 		initAmazonAppStore();
-		initTAppStore();
-		initNaverAppStore();
-
+		initOneStore();
 	}
 
 	private AppStore appStore;
@@ -36,13 +33,13 @@ public class MainActivity extends AppCompatActivity {
 
 	//https://play.google.com/store/apps/details?id=com.google.android.gm
 	private void initPlayAppStore() {
-		Button btn01 = (Button)findViewById(R.id.play_button_01);
-		Button btn02 = (Button)findViewById(R.id.play_button_02);
-		Button btn03 = (Button)findViewById(R.id.play_button_03);
-		Button btn04 = (Button)findViewById(R.id.play_button_04);
+		Button btn01 = findViewById(R.id.play_button_01);
+		Button btn02 = findViewById(R.id.play_button_02);
+		Button btn03 = findViewById(R.id.play_button_03);
+		Button btn04 = findViewById(R.id.play_button_04);
 
-		Button btn05 = (Button)findViewById(R.id.play_button_05);
-		Button btn06 = (Button)findViewById(R.id.play_button_06);
+		Button btn05 = findViewById(R.id.play_button_05);
+		Button btn06 = findViewById(R.id.play_button_06);
 
 		btn01.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -109,10 +106,10 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void initAmazonAppStore() {
-		Button btn01 = (Button)findViewById(R.id.amazon_button_01);
-		Button btn02 = (Button)findViewById(R.id.amazon_button_02);
-		Button btn03 = (Button)findViewById(R.id.amazon_button_03);
-		Button btn04 = (Button)findViewById(R.id.amazon_button_04);
+		Button btn01 = findViewById(R.id.amazon_button_01);
+		Button btn02 = findViewById(R.id.amazon_button_02);
+		Button btn03 = findViewById(R.id.amazon_button_03);
+		Button btn04 = findViewById(R.id.amazon_button_04);
 
 		btn01.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -147,11 +144,11 @@ public class MainActivity extends AppCompatActivity {
 		});
 	}
 
-	private void initTAppStore() {
-		Button btn01 = (Button)findViewById(R.id.tstore_button_01);
-		Button btn02 = (Button)findViewById(R.id.tstore_button_02);
-		Button btn03 = (Button)findViewById(R.id.tstore_button_03);
-		Button btn04 = (Button)findViewById(R.id.tstore_button_04);
+	private void initOneStore() {
+		Button btn01 = findViewById(R.id.tstore_button_01);
+		Button btn02 = findViewById(R.id.tstore_button_02);
+		Button btn03 = findViewById(R.id.tstore_button_03);
+		Button btn04 = findViewById(R.id.tstore_button_04);
 
 		btn01.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -190,52 +187,5 @@ public class MainActivity extends AppCompatActivity {
 			}
 		}); */
 	}
-
-
-	private void initNaverAppStore() {
-		Button btn01 = (Button)findViewById(R.id.naver_button_01);
-		Button btn02 = (Button)findViewById(R.id.naver_button_02);
-		Button btn03 = (Button)findViewById(R.id.naver_button_03);
-		Button btn04 = (Button)findViewById(R.id.naver_button_04);
-
-		btn01.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				appStore = NaverAppStore.newInstance();
-				Toast.makeText(ctx, "설치 여부 : " + appStore.isInstalled(ctx), Toast.LENGTH_SHORT).show();
-			}
-		});
-
-
-		btn02.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				appStore = NaverAppStore.newInstance();
-				appStore.openApp(ctx, "409160");
-			}
-		});
-
-		btn03.setVisibility(View.INVISIBLE);
-		/*
-		btn03.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				publisherAppOpener = PlayAppStore.newInstance();
-				publisherAppOpener.openPublisherApps(ctx, "Google Inc.");
-			}
-		}); */
-
-		btn04.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				appStore = NaverAppStore.newInstance();
-				appStore.searchApp(ctx, "naver");
-			}
-		});
-	}
-
-
-
-
 
 }
