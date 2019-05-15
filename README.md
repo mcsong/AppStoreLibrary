@@ -1,5 +1,5 @@
 ## AppStore Library
-[![Release](https://img.shields.io/badge/jcenter-1.0.8-blue.svg)](https://bintray.com/mcsong/maven/appstore)  [![Android Arsenal](https://img.shields.io/badge/Android-Arsenal-green.svg?style=flat)](https://android-arsenal.com/details/1/1772)
+[![Release](https://img.shields.io/badge/jcenter-1.0.9-blue.svg)](https://bintray.com/mcsong/maven/appstore)  [![Android Arsenal](https://img.shields.io/badge/Android-Arsenal-green.svg?style=flat)](https://android-arsenal.com/details/1/1772)
 
 <a href='https://ko-fi.com/mcsong' target='_blank'>
 	<img height='34' style='border:0px;height:34px;' src='https://az743702.vo.msecnd.net/cdn/kofi4.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' />
@@ -24,7 +24,7 @@ This library make easy to use AppStore app's features.
 Gradle
 ```groovy
     dependencies {
-    	implementation 'net.sjava:appstore:1.0.8'
+    	implementation 'net.sjava:appstore:1.0.9'
     }
 ```
 
@@ -33,23 +33,23 @@ Maven
     <dependency>
      <groupId>net.sjava</groupId>
      <artifactId>appstore</artifactId>
-     <version>1.0.8</version>
+     <version>1.0.9</version>
     </dependency>
 ```
 ## Usage
 
 ```java
 	private void initPlayAppStore() {
-		Button btn01 = (Button)findViewById(R.id.play_button_01);
-		Button btn02 = (Button)findViewById(R.id.play_button_02);
-		Button btn03 = (Button)findViewById(R.id.play_button_03);
-		Button btn04 = (Button)findViewById(R.id.play_button_04);
+		Button btn01 = findViewById(R.id.play_button_01);
+		Button btn02 = findViewById(R.id.play_button_02);
+		Button btn03 = findViewById(R.id.play_button_03);
+		Button btn04 = findViewById(R.id.play_button_04);
 
 		btn01.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				appStore = PlayAppStore.newInstance();
-				Toast.makeText(ctx, "설치 여부 : " + appStore.isInstalled(ctx), Toast.LENGTH_SHORT).show();
+				Toast.makeText(ctx, "isInstalled : " + appStore.isInstalled(ctx), Toast.LENGTH_SHORT).show();
 			}
 		});
 
@@ -81,7 +81,7 @@ Maven
 
 ## License
 
-Copyright 2017 Justin Song
+Copyright 2019 Justin Song
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
