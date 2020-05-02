@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onClick(View v) {
         appStore = PlayAppStore.newInstance();
-        ((PlayAppStore) appStore).openDeveloperPage(ctx, "developerId");
+        ((PlayAppStore) appStore).openDeveloperPage(ctx, "nTools");
 
       }
     });
