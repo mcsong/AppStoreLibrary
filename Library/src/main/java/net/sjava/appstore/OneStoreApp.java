@@ -13,7 +13,7 @@ import android.net.Uri;
  * @version 1.0.0
  */
 public class OneStoreApp extends AppStore {
-	private static final String APP_URL = "http://m.tstore.co.kr/mobilepoc/apps/appsDetail.omp?prodId=";
+	private static final String APP_URL = "https://onestore.co.kr/userpoc/apps/view?pid=";
 
 	public static OneStoreApp newInstance() {
 		return new OneStoreApp();
@@ -41,7 +41,7 @@ public class OneStoreApp extends AppStore {
 
 	@Override
 	public void searchApp(Context ctx, String keyword) {
-		String url = "http://www.tstore.co.kr/mobilepoc/search?query="+ keyword;
+		String url = "https://onestore.co.kr/userpoc/search?query="+ keyword;
 		intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 		ctx.startActivity(intent);
 	}

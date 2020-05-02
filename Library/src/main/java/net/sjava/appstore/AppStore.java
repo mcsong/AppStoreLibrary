@@ -1,5 +1,6 @@
 package net.sjava.appstore;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -23,6 +24,7 @@ public abstract class AppStore {
 
 	protected Intent intent;
 
+	@SuppressLint("WrongConstant")
 	private List<ApplicationInfo> getApplications(Context ctx) {
 		return ctx.getPackageManager().getInstalledApplications(
 				PackageManager.COMPONENT_ENABLED_STATE_DEFAULT);
@@ -30,12 +32,14 @@ public abstract class AppStore {
 
 	protected boolean isAppInstalled(Context ctx, String packageName) {
 		List<ApplicationInfo> apps = getApplications(ctx);
-		if(apps == null || apps.size() == 0)
+		if(apps.size() == 0) {
 			return false;
+		}
 
 		for(ApplicationInfo appinfo : apps) {
-			if(appinfo.packageName.contains(packageName))
+			if(appinfo.packageName.contains(packageName)) {
 				return true;
+			}
 		}
 
 		return false;

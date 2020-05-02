@@ -5,7 +5,7 @@ publish {
 	userOrg = 'mcsong'
 	groupId = 'net.sjava'
 	artifactId = 'appstore'
-	publishVersion = '1.0.9'
+	publishVersion = '1.1.0'
 	desc = 'Android AppStore Library'
 	website = 'https://github.com/mcsong/AppStoreLibrary'
 	issueTracker = "${website}/issues"
@@ -17,18 +17,18 @@ buildscript {
 		jcenter()
 	}
 	dependencies {
-		//classpath 'com.novoda:bintray-release:0.5.0'
-		classpath 'com.novoda:bintray-release:0.9.1'
+		//classpath 'com.novoda:bintray-release:0.9.1'
+		classpath 'com.novoda:bintray-release:0.9.2'
 	}
 }
 
 android {
-	compileSdkVersion 28
+	compileSdkVersion 29
 	defaultConfig {
 		minSdkVersion 15
-		targetSdkVersion 28
-		versionCode 9
-		versionName "1.0.9"
+		targetSdkVersion 29
+		versionCode 100
+		versionName "1.1.0"
 	}
 
 	buildTypes {
