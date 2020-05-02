@@ -6,25 +6,24 @@
 </a>
 
 ## Overview
-This library make easy to use AppStore app's features.
-
+This library makes easy to use the AppStore app's features.
 
 ### Features
-- Check store app is installed.
-- Open app within store app.
-- Search apps by publisher within store app.
+- Detect a store app is installed or not.
+- Open app via store app.
+- Search apps with publisher via store app.
 - Search apps within store app.
 
-### AppStore
-- Play AppStore
+### Supported AppStore apps
+- Play Store
 - Amazon AppStore
-- T Store
+- OneStore
 
 ## Gradle & Maven
 Gradle
 ```groovy
     dependencies {
-    	implementation 'net.sjava:appstore:1.0.9'
+    	implementation 'net.sjava:appstore:1.1.0'
     }
 ```
 
@@ -33,7 +32,7 @@ Maven
     <dependency>
      <groupId>net.sjava</groupId>
      <artifactId>appstore</artifactId>
-     <version>1.0.9</version>
+     <version>1.1.0</version>
     </dependency>
 ```
 ## Usage
@@ -81,7 +80,7 @@ Maven
 
 ## License
 
-Copyright 2019 Justin Song
+Copyright 2020 MooChan(Justin) Song
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
