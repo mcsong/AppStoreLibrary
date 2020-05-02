@@ -13,10 +13,10 @@ import android.net.Uri;
  * @date Dec 10, 2014 2:04:13 PM
  */
 public class PlayAppStore extends AppStore implements PublisherAppOpenable {
-  private static final String APP_URL = "http://play.google.com/store/apps/details?id=";
-  private static final String APP_SEARCH_URL = "http://play.google.com/store/search?q=";
-  private static final String APP_DEVELOPER_PAGE = "http://play.google.com/store/dev?id=";
-  private static final String APP_COLLECTION_URL = "http://play.google.com/store/apps/collection/";
+  private static final String APP_URL = "https://play.google.com/store/apps/details?id=";
+  private static final String APP_SEARCH_URL = "https://play.google.com/store/search?q=";
+  private static final String APP_DEVELOPER_PAGE = "https://play.google.com/store/apps/developer?id=";
+  private static final String APP_COLLECTION_URL = "https://play.google.com/store/apps/collection/";
 
   public static PlayAppStore newInstance() {
     return new PlayAppStore();
