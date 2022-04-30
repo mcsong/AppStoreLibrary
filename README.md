@@ -37,7 +37,7 @@ Maven
 ```
 ## Usage
 
-```java
+``` java
 	private void initPlayAppStore() {
 		Button btn01 = findViewById(R.id.play_button_01);
 		Button btn02 = findViewById(R.id.play_button_02);

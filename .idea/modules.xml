@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AppStoreLibrary.iml" filepath="$PROJECT_DIR$/AppStoreLibrary.iml" group="AppStoreLibrary" />
-      <module fileurl="file://$PROJECT_DIR$/Demo/Demo.iml" filepath="$PROJECT_DIR$/Demo/Demo.iml" group="AppStoreLibrary/Demo" />
-      <module fileurl="file://$PROJECT_DIR$/Library/Library.iml" filepath="$PROJECT_DIR$/Library/Library.iml" group="AppStoreLibrary/Library" />
+      <module fileurl="file://$PROJECT_DIR$/AppStoreLibrary.iml" filepath="$PROJECT_DIR$/AppStoreLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Demo/AppStoreLibrary.Demo.iml" filepath="$PROJECT_DIR$/.idea/modules/Demo/AppStoreLibrary.Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Library/AppStoreLibrary.Library.iml" filepath="$PROJECT_DIR$/.idea/modules/Library/AppStoreLibrary.Library.iml" />
     </modules>
   </component>
 </project>

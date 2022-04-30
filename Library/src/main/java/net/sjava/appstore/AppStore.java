@@ -15,12 +15,9 @@ import java.util.List;
  * @version 1.0.0
  */
 public abstract class AppStore {
-	protected static final String PACKAGE_NAME_PLAY_OLD = "com.google.market";
-	protected static final String PACKAGE_NAME_PLAY_NEW = "com.android.vending";
-
+	protected static final String PACKAGE_NAME_PLAY = "com.android.vending";
 	protected static final String PACKAGE_NAME_AMAZON = "com.amazon.venezia";
 	protected static final String PACKAGE_NAME_TSTORE = "com.skt.skaf.A000Z00040";
-	protected static final String PACKAGE_NAME_NSTORE = "com.nhn.android.appstore";
 
 	protected Intent intent;
 

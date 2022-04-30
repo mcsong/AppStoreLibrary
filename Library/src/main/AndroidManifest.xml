@@ -1,10 +1,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-		  package="net.sjava.appstore">
+    package="net.sjava.appstore">
 
-	<application android:allowBackup="true"
-				 android:label="@string/app_name"
-		>
+    <queries>
+        <package android:name="com.android.vending" />
+        <package android:name="com.amazon.venezia" />
+        <package android:name="com.skt.skaf.A000Z00040" />
+    </queries>
 
-	</application>
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name" />
 
 </manifest>

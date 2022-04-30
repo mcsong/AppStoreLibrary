@@ -24,8 +24,7 @@ public class PlayAppStore extends AppStore implements PublisherAppOpenable {
 
   @Override
   public boolean isInstalled(Context ctx) {
-    return isAppInstalled(ctx, PACKAGE_NAME_PLAY_OLD)
-        || isAppInstalled(ctx, PACKAGE_NAME_PLAY_NEW);
+    return isAppInstalled(ctx, PACKAGE_NAME_PLAY);
   }
 
   @Override
